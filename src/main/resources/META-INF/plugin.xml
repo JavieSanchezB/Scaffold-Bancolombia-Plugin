@@ -1,15 +1,21 @@
-<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.javiesanchezb.scaffoldbancolombiaplugin</id>
-    <name>Scaffold-Bancolombia-Plugin</name>
-    <vendor>javiesanchezb</vendor>
+    <id>com.scaffold.plugin</id>
+    <name>Scaffold Clean Architecture Plugin</name>
+    <vendor email="ing.javier.sanchez.b@gmail.com">JavieSanchezB</vendor>
+
+    <description>
+        Plugin para ejecutar tareas del Scaffold Clean Architecture de Bancolombia desde IntelliJ.
+    </description>
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.javiesanchezb.scaffoldbancolombiaplugin.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.javiesanchezb.scaffoldbancolombiaplugin.startup.MyProjectActivity" />
+        <toolWindow id="Scaffold"
+                    anchor="left"
+                    factoryClass="com.github.javiesanchezb.scaffoldbancolombiaplugin.toolWindow.ScaffoldToolWindowFactory"
+                    icon="/icons/Symbol.png"
+                    secondary="false"
+        />
     </extensions>
 </idea-plugin>
+

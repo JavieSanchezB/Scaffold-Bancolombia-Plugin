@@ -16,7 +16,7 @@ version = providers.gradleProperty("pluginVersion").get()
 
 // Set the JVM language level used to build the project.
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(17)
 }
 
 // Configure project's dependencies
@@ -125,6 +125,10 @@ kover {
 }
 
 tasks {
+    processResources {
+        duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    }
+    
     wrapper {
         gradleVersion = providers.gradleProperty("gradleVersion").get()
     }
@@ -151,6 +155,14 @@ intellijPlatformTesting {
             plugins {
                 robotServerPlugin()
             }
+        }
+    }
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs("src/main/resources")
         }
     }
 }
