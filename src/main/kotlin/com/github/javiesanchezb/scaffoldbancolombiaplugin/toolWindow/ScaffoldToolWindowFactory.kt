@@ -7,9 +7,10 @@ import com.intellij.openapi.wm.ToolWindow
 import com.intellij.openapi.wm.ToolWindowFactory
 import com.intellij.ui.components.JBScrollPane
 import com.intellij.ui.content.ContentFactory
-import com.intellij.util.SVGLoader.load
 import java.awt.GridLayout
-import javax.swing.*
+import javax.swing.Icon
+import javax.swing.JButton
+import javax.swing.JPanel
 
 class ScaffoldToolWindowFactory : ToolWindowFactory {
 
@@ -19,9 +20,7 @@ class ScaffoldToolWindowFactory : ToolWindowFactory {
             println("Intentando cargar ícono desde: $path")
             println("Resource URL: $resource")
             resource?.let {
-                load(it, 1.0f).let { svg ->
-                    com.intellij.util.ui.JBImageIcon(svg)
-                }
+                com.intellij.openapi.util.IconLoader.getIcon(path, javaClass)
             }.also { 
                 if (it == null) {
                     System.err.println("No se pudo cargar el ícono: $path")
