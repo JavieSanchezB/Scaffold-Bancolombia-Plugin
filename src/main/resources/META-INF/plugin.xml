@@ -1,6 +1,5 @@
 <idea-plugin>
     <id>com.scaffold.plugin</id>
-    <name>Scaffold Clean Architecture Plugin</name>
     <vendor email="ing.javier.sanchez.b@gmail.com">JavieSanchezB</vendor>
 
     <description>
